@@ -42,6 +42,8 @@ namespace ProductReviewManagement
             management.SelectTopThreeHighestRating(productReviewList);
             Console.WriteLine("Select records whose rating is greater than 3 for particular productId's");
             management.SelectedRecordsofRatingGreaterThan3(productReviewList);
+            Console.WriteLine("Count productID using groupby");
+            management.CountProductIds(productReviewList);
             Console.ReadKey();
         }
     }

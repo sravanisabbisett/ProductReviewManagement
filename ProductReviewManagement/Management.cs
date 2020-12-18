@@ -41,5 +41,18 @@ namespace ProductReviewManagement
             }
         }
 
+        /// <summary>
+        /// Counts the product ids.
+        /// </summary>
+        /// <param name="productReviews">The product reviews.</param>
+        public void CountProductIds(List<ProductReview> productReviews)
+        {
+            var recordedData = productReviews.GroupBy(x => x.ProductID).Select(x => new { ProductID = x.Key, Count = x.Count() });
+            foreach (var list in recordedData)
+            {
+                Console.WriteLine("Product ID: " + list.ProductID + " " + "Count: " + list.Count);
+            }
+        }
+
     }
 }
