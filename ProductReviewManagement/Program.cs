@@ -50,6 +50,8 @@ namespace ProductReviewManagement
             management.SkipTop5Records(productReviewList);
             Console.WriteLine("Select only productId and Review from list");
             management.SelectProductIdAndReview(productReviewList);
+            Console.WriteLine("Select only true values");
+            management.RetriveIsLikeVlaueTrue();
             Console.ReadKey();
         }
     }

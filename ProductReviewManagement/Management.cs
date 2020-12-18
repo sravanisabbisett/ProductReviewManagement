@@ -4,11 +4,12 @@ using System.Data;
 using System.Linq;
 
 
+
 namespace ProductReviewManagement
 { 
-    class Management
+    public class Management
     {
-        public readonly DataTable dataTable = new DataTable();
+        DataTable dataTable = new DataTable();
         public Management()
         {
             //creating coloumns
@@ -43,6 +44,7 @@ namespace ProductReviewManagement
 
         }
         
+
         /// <summary>
         /// Selects the top three highest rating.
         /// </summary>
@@ -128,6 +130,23 @@ namespace ProductReviewManagement
             {
                 Console.WriteLine("ProductID:" + products.ProductID + " , Review:" + products.Review);
             }
+        }
+
+        /// <summary>
+        /// Retrives the is like vlaue true.
+        /// </summary>
+        /// <param name="table">The table.</param>
+        public void RetriveIsLikeVlaueTrue()
+        {
+            var Data = from reviews in dataTable.AsEnumerable()
+                       where reviews.Field<bool>("isLike").Equals(true)
+                       select reviews;
+
+            foreach(var dataItem in Data)
+            {
+                Console.WriteLine($"ProductID- {dataItem.ItemArray[0]} UserID- {dataItem.ItemArray[1]} Rating- {dataItem.ItemArray[2]} Review- {dataItem.ItemArray[3]} isLike- {dataItem.ItemArray[4]}");
+            }
+                       
         }
 
     }
