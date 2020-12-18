@@ -52,6 +52,8 @@ namespace ProductReviewManagement
             management.SelectProductIdAndReview(productReviewList);
             Console.WriteLine("Select only true values");
             management.RetriveIsLikeVlaueTrue();
+            Console.WriteLine("Average rating by product");
+            management.AverageRatingByProductID();
             Console.ReadKey();
         }
     }
