@@ -24,5 +24,22 @@ namespace ProductReviewManagement
                 Console.WriteLine(list.toString());
             }
         }
+
+        /// <summary>
+        /// Selecteds the recordsof rating greater than3.
+        /// </summary>
+        /// <param name="productReviews">The product reviews.</param>
+        public void SelectedRecordsofRatingGreaterThan3(List<ProductReview> productReviews)
+        {
+            var selectedRecords = from products in productReviews
+                                  where (products.ProductID == 1 || products.ProductID == 4 || products.ProductID == 9)
+                                  && products.Rating > 3
+                                  select products;
+            foreach(var list in selectedRecords)
+            {
+                Console.WriteLine(list.toString());
+            }
+        }
+
     }
 }
