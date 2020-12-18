@@ -54,5 +54,19 @@ namespace ProductReviewManagement
             }
         }
 
+        /// <summary>
+        /// Selects the review and identifier from list.
+        /// </summary>
+        /// <param name="productReviews">The product reviews.</param>
+        public void SelectReviewAndIdFromList(List<ProductReview> productReviews)
+        {
+            var select = from products in productReviews
+                         select (products.ProductID, products.Review);
+            foreach(var list in select)
+            {
+                Console.WriteLine("ProductID:" + list.ProductID + " , Review:" + list.Review);
+            }
+        }
+
     }
 }
