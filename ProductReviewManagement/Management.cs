@@ -178,5 +178,20 @@ namespace ProductReviewManagement
             }
         }
 
+        /// <summary>
+        /// Retrives the user id10 order by rating.
+        /// </summary>
+        public void RetriveUserId10OrderByRating()
+        {
+            var data = from review in dataTable.AsEnumerable()
+                       where review.Field<int>("UserID").Equals(10)
+                       orderby review.Field<double>("Rating")
+                       select review;
+            foreach (var dataItem in data)
+            {
+                Console.WriteLine($"ProductID- {dataItem.ItemArray[0]} UserID- {dataItem.ItemArray[1]} Rating- {dataItem.ItemArray[2]} Review- {dataItem.ItemArray[3]} isLike- {dataItem.ItemArray[4]}");
+            }
+        }
+
     }
 }
