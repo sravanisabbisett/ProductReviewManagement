@@ -44,10 +44,12 @@ namespace ProductReviewManagement
             management.SelectedRecordsofRatingGreaterThan3(productReviewList);
             Console.WriteLine("Count productID using groupby");
             management.CountProductIds(productReviewList);
-            Console.WriteLine("selsect only productId and Review from list");
+            Console.WriteLine("select only productId and Review from list");
             management.SelectReviewAndIdFromList(productReviewList);
             Console.Write("Skip top 5 records");
             management.SkipTop5Records(productReviewList);
+            Console.WriteLine("Select only productId and Review from list");
+            management.SelectProductIdAndReview(productReviewList);
             Console.ReadKey();
         }
     }
