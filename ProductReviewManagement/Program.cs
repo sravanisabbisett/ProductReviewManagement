@@ -8,6 +8,7 @@ namespace ProductReviewManagement
         static void Main(string[] args)
         {
             Console.WriteLine("Product Review Management");
+            Management management = new Management();
             List<ProductReview> productReviewList = new List<ProductReview>()
             {
                 new ProductReview(){ProductID=1,UserID=1,Rating=2,Review="Good",isLike=false},
@@ -37,10 +38,8 @@ namespace ProductReviewManagement
                 new ProductReview(){ProductID=25,UserID=20,Rating=6,Review="nice",isLike=true},
                 new ProductReview(){ProductID=17,UserID=18,Rating=11,Review="nice",isLike=true},
             };
-            foreach (var list in productReviewList)
-            {
-                Console.WriteLine(list.toString());
-            }
+            Console.WriteLine("Selects the top 3 records of highest rating");
+            management.SelectTopThreeHighestRating(productReviewList);
             Console.ReadKey();
         }
     }
