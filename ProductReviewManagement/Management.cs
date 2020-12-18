@@ -30,7 +30,7 @@ namespace ProductReviewManagement
             dataTable.Rows.Add(2, 5, 4d, "Good", true);
             dataTable.Rows.Add(3, 4, 8d, "Good", true);
             dataTable.Rows.Add(10, 5, 7d,"Good", true);
-            dataTable.Rows.Add(11, 1, 3d, "nice", true);
+            dataTable.Rows.Add(11, 1, 3d, "Nice", true);
             dataTable.Rows.Add(12, 10, 5d, "Okay", true);
             dataTable.Rows.Add(13, 10, 8d, "Nice", true);
             dataTable.Rows.Add(11, 10, 2d, "Bad", false);
@@ -160,6 +160,21 @@ namespace ProductReviewManagement
             foreach (var dataItem in Data)
             {
                 Console.WriteLine("Product Id: " + dataItem.ProductID + " " + "Average: " + dataItem.Average);
+            }
+        }
+
+        /// <summary>
+        /// Retrives the review message nice.
+        /// </summary>
+        public void RetriveReviewMessageNice()
+        {
+            var data = from review in dataTable.AsEnumerable()
+                       where review.Field<string>("Review").Equals("Nice")
+                       select review;
+
+            foreach(var dataItem in data)
+            {
+                Console.WriteLine($"ProductID- {dataItem.ItemArray[0]} UserID- {dataItem.ItemArray[1]} Rating- {dataItem.ItemArray[2]} Review- {dataItem.ItemArray[3]} isLike- {dataItem.ItemArray[4]}");
             }
         }
 

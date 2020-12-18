@@ -54,6 +54,8 @@ namespace ProductReviewManagement
             management.RetriveIsLikeVlaueTrue();
             Console.WriteLine("Average rating by product");
             management.AverageRatingByProductID();
+            Console.WriteLine("Retrive review message nice");
+            management.RetriveReviewMessageNice();
             Console.ReadKey();
         }
     }
