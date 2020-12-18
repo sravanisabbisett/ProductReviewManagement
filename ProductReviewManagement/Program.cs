@@ -46,6 +46,8 @@ namespace ProductReviewManagement
             management.CountProductIds(productReviewList);
             Console.WriteLine("selsect only productId and Review from list");
             management.SelectReviewAndIdFromList(productReviewList);
+            Console.Write("Skip top 5 records");
+            management.SkipTop5Records(productReviewList);
             Console.ReadKey();
         }
     }

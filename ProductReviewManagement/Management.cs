@@ -68,5 +68,19 @@ namespace ProductReviewManagement
             }
         }
 
+        /// <summary>
+        /// Skips the top5 records.
+        /// </summary>
+        /// <param name="productReviews">The product reviews.</param>
+        public void SkipTop5Records(List<ProductReview> productReviews)
+        {
+            var skipRecords = (from products in productReviews
+                               select products).Skip(5);
+            foreach(var list in skipRecords)
+            {
+                Console.WriteLine(list.toString());
+            }
+        }
+
     }
 }
